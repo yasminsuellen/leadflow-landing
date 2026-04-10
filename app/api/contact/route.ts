@@ -23,9 +23,10 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(contact, { status: 201 })
   } catch (err) {
-    console.error(err)
+    const message = err instanceof Error ? err.message : String(err)
+    console.error('Contact API error:', message)
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: message },
       { status: 500 }
     )
   }
