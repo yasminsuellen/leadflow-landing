@@ -1,9 +1,8 @@
 import { PrismaClient } from '@prisma/client'
-import { PrismaPg } from '@prisma/adapter-pg'
+import { withAccelerate } from '@prisma/extension-accelerate'
 import { NextRequest, NextResponse } from 'next/server'
 
-const adapter = new PrismaPg(process.env.DATABASE_URL!)
-const prisma = new PrismaClient({ adapter })
+const prisma = new PrismaClient().$extends(withAccelerate())
 
 export async function POST(request: NextRequest) {
   try {
