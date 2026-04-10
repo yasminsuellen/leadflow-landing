@@ -2,7 +2,7 @@ import { PrismaClient } from '@prisma/client'
 import { PrismaPg } from '@prisma/adapter-pg'
 import { NextRequest, NextResponse } from 'next/server'
 
-const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! })
+const adapter = new PrismaPg(process.env.DATABASE_URL!)
 const prisma = new PrismaClient({ adapter })
 
 export async function POST(request: NextRequest) {
@@ -22,7 +22,8 @@ export async function POST(request: NextRequest) {
     })
 
     return NextResponse.json(contact, { status: 201 })
-  } catch {
+  } catch (err) {
+    console.error(err)
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
