@@ -10,6 +10,10 @@ Product landing page for a lead qualification automation service, built with Nex
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-316192?style=flat-square&logo=postgresql)
 [![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?style=flat-square&logo=vercel)](https://leadflow-landing-gj2k24yq1-eusuellenyasmin.vercel.app)
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/12958624-ad9b-48dc-b9d5-a0a773d5ad60" alt="Appointment Rebooking Demo" width="100%"/>
+</div>
+
 ## Features
 
 - Responsive one-page layout with smooth scroll navigation
